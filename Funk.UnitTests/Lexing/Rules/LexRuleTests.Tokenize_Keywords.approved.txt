@@ -23,5 +23,25 @@
     "Length": 3,
     "Command": "keyword",
     "Value": "end"
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  },
+  {
+    "Length": 6,
+    "Command": "keyword",
+    "Value": "return"
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  },
+  {
+    "Length": 5,
+    "Command": "keyword",
+    "Value": "const"
   }
 ]

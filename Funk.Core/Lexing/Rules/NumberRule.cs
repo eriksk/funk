@@ -23,7 +23,7 @@ namespace Funk.Core.Lexing.Rules
             var segmentLength = code.Substring(index).Length;
             var i = index;
             var value = "";
-            while (i < segmentLength && (char.IsDigit(code[i]) || code[i] == '.'))
+            while (i < index + segmentLength && (char.IsDigit(code[i]) || code[i] == '.'))
             {
                 value += code[i++];
             }

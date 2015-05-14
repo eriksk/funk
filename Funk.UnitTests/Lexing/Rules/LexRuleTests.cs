@@ -14,7 +14,7 @@ namespace Funk.UnitTests.Lexing.Rules
         public void Tokenize_Keywords()
         {
             var lexer = new Lexer();
-            var tokens = lexer.Tokenize("var funk end").ToArray();
+            var tokens = lexer.Tokenize("var funk end return const").ToArray();
 
             Approvals.Verify(tokens.ToJson());
         }
@@ -24,7 +24,7 @@ namespace Funk.UnitTests.Lexing.Rules
         public void Tokenize_Operators()
         {
             var lexer = new Lexer();
-            var tokens = lexer.Tokenize("+ - * /").ToArray();
+            var tokens = lexer.Tokenize("+ - * / =").ToArray();
 
             Approvals.Verify(tokens.ToJson());
         }
@@ -120,15 +120,25 @@ namespace Funk.UnitTests.Lexing.Rules
 
         [TestMethod]
         [UseReporter(typeof(WinMergeReporter))]
+        public void Tokenize_Comment()
+        {
+            var lexer = new Lexer();
+            const string code = "# this is a comment";
+            var tokens = lexer.Tokenize(code).ToArray();
+
+            Approvals.Verify(tokens.ToJson());
+        }
+
+        [TestMethod]
+        [UseReporter(typeof(WinMergeReporter))]
         public void Tokenize_MultiLineComment()
         {
-            Assert.Inconclusive("TODO");
+            var lexer = new Lexer();
+            const string code = "#! this is a multi line\r\n " +
+                                "comment !#";
+            var tokens = lexer.Tokenize(code).ToArray();
 
-            //var lexer = new Lexer();
-            //const string code = "# this is a comment";
-            //var tokens = lexer.Tokenize(code).ToArray();
-
-            //Approvals.Verify(tokens.ToJson());
+            Approvals.Verify(tokens.ToJson());
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Funk.Core.Lexing.Rules
 
         public override bool Match(string code, int index)
         {
-            return Regex.IsMatch(code.Substring(index), _regex);
+            return Regex.IsMatch(code.Substring(index), _regex) && Regex.Match(code.Substring(index), _regex).Value.Length > 0;
         }
 
         public override Token GetToken(string code, int index)

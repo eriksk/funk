@@ -13,11 +13,13 @@ namespace Funk.Core.Lexing
             _rules = new LexRule[]
             {
                 new WhiteSpaceRule(), 
-                new KeywordRule(new []{ "var", "funk", "end" }),
-                new OperatorRule(new []{ @"\+{1}", @"\-{1}", @"\*{1}", @"\/{1}" }), 
+                new KeywordRule(new []{ "var", "funk", "end", "return", "const" }),
+                new OperatorRule(new []{ @"\+{1}", @"\-{1}", @"\*{1}", @"\/{1}", @"\={1}" }), 
                 new StringRule(), 
                 new NumberRule(), 
+                new MultilineCommentRule(), 
                 new SingleLineCommentRule(), 
+                new SingleCharRule("argument_separator", ','), 
                 new SingleCharRule("parenthesis_open", '('), 
                 new SingleCharRule("parenthesis_closed", ')'), 
                 new IdentifierRule(), 
@@ -43,7 +45,7 @@ namespace Funk.Core.Lexing
                     }
                 }
                 if (!anyMatch)
-                    throw new ArgumentException(string.Format("Error in code on position: '{0}', '{1}'", position, code.Substring(position).Truncate(10)));
+                    throw new ArgumentException(string.Format("Unexpected token, position: '{0}', '{1}'", position, code.Substring(position).Truncate(10)));
             }
         }
     }

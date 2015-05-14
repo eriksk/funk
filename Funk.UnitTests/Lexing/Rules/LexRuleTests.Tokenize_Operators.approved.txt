@@ -33,5 +33,15 @@
     "Length": 1,
     "Command": "operator",
     "Value": "/"
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  },
+  {
+    "Length": 1,
+    "Command": "operator",
+    "Value": "="
   }
 ]

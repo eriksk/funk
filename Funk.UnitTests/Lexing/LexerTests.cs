@@ -44,7 +44,7 @@ namespace Funk.UnitTests.Lexing
         {
             AssertTokens("function_declaration.fk", new[]
             {
-                "funk", "multiply", "(", "a", "b", ")",
+                "funk", "multiply", "(", "a", ",", "b", ")",
                 "end"
             });
         }
@@ -55,10 +55,10 @@ namespace Funk.UnitTests.Lexing
         {
             AssertTokens("function_declaration_and_call.fk", new[]
             {
-                "funk", "multiply", "(", "a", "b", ")",
+                "funk", "multiply", "(", "a", ",", "b", ")",
                 "return", "a", "+", "b",
                 "end",
-                "multiply", "(", "3", "8", ")"
+                "multiply", "(", "3", ",", "8", ")"
             });
         }
 
@@ -108,7 +108,7 @@ namespace Funk.UnitTests.Lexing
         {
             AssertTokens("single_line_comment.fk", new[]
             {
-                "# hello man what up yo"
+                " hello man what up yo"
             });
         }
 
@@ -118,11 +118,10 @@ namespace Funk.UnitTests.Lexing
         {
             AssertTokens("multi_line_comment.fk", new[]
             {
-                "#- hello man what up yo\n"+
-                "	this comment spans multiple lines\n"+
-                "\n" +
-                "	pretty cool huh\n"+
-                "-#"
+                " hello man what up yo\r\n"+
+                "	this comment spans multiple lines\r\n"+
+                "\r\n" +
+                "	pretty cool huh\r\n"
             });
         }
 
@@ -130,7 +129,7 @@ namespace Funk.UnitTests.Lexing
         {
             var code = TestHelper.LoadScript(fileName);
             var lexer = new Lexer();
-            var tokens = lexer.Tokenize(code).Select(x => x.Value).ToArray();
+            var tokens = lexer.Tokenize(code).Where(x => x.Command != "whitespace").Select(x => x.Value).ToArray();
 
             CollectionAssert.AreEqual(expected, tokens, string.Join(" ", tokens));
         }

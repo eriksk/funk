@@ -44,6 +44,7 @@
     <Compile Include="Lexing\Rules\IdentifierRule.cs" />
     <Compile Include="Lexing\Rules\LexRule.cs" />
     <Compile Include="Lexing\Rules\KeywordRule.cs" />
+    <Compile Include="Lexing\Rules\MultilineCommentRule.cs" />
     <Compile Include="Lexing\Rules\NumberRule.cs" />
     <Compile Include="Lexing\Rules\OperatorRule.cs" />
     <Compile Include="Lexing\Rules\SingleCharRule.cs" />

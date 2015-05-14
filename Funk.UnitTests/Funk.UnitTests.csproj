@@ -113,9 +113,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lexing\Rules\LexRuleTests.Tokenize_ClosedParenthesis.approved.txt" />
+    <Content Include="Lexing\Rules\LexRuleTests.Tokenize_Comment.approved.txt" />
     <Content Include="Lexing\Rules\LexRuleTests.Tokenize_FloatingPointNumber.approved.txt" />
+    <Content Include="Lexing\Rules\LexRuleTests.Tokenize_Identifier.approved.txt" />
     <Content Include="Lexing\Rules\LexRuleTests.Tokenize_Keywords.approved.txt" />
+    <Content Include="Lexing\Rules\LexRuleTests.Tokenize_MultiLineComment.approved.txt" />
     <Content Include="Lexing\Rules\LexRuleTests.Tokenize_OpenParenthesis.approved.txt" />
+    <Content Include="Lexing\Rules\LexRuleTests.Tokenize_Operators.approved.txt" />
     <Content Include="Lexing\Rules\LexRuleTests.Tokenize_SingleLineComment.approved.txt" />
     <Content Include="Lexing\Rules\LexRuleTests.Tokenize_String.approved.txt" />
     <Content Include="Lexing\Rules\LexRuleTests.Tokenize_Whitespace.approved.txt" />
