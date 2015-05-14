@@ -1,0 +1,42 @@
+﻿[
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": "\r"
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": "\n"
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": "\t"
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  },
+  {
+    "Length": 1,
+    "Command": "whitespace",
+    "Value": " "
+  }
+]

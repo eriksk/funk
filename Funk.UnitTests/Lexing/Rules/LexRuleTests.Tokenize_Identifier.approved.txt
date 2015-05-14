@@ -1,0 +1,7 @@
+﻿[
+  {
+    "Length": 18,
+    "Command": "identifier",
+    "Value": "some_variable_name"
+  }
+]

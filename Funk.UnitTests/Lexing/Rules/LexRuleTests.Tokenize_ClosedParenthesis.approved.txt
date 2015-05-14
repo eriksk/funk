@@ -1,0 +1,7 @@
+﻿[
+  {
+    "Length": 1,
+    "Command": "parenthesis_closed",
+    "Value": ")"
+  }
+]

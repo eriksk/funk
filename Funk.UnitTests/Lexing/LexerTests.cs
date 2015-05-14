@@ -1,4 +1,6 @@
-﻿using Funk.Core;
+﻿using System.Linq;
+using Funk.Core;
+using Funk.Core.Lexing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Funk.UnitTests.Lexing
@@ -128,7 +130,7 @@ namespace Funk.UnitTests.Lexing
         {
             var code = TestHelper.LoadScript(fileName);
             var lexer = new Lexer();
-            var tokens = lexer.Tokenize(code);
+            var tokens = lexer.Tokenize(code).Select(x => x.Value).ToArray();
 
             CollectionAssert.AreEqual(expected, tokens, string.Join(" ", tokens));
         }

@@ -1,0 +1,7 @@
+﻿[
+  {
+    "Length": 19,
+    "Command": "string",
+    "Value": "text with spacing"
+  }
+]
